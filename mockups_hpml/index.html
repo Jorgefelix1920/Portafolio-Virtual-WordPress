@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function delayRedirect(){
+            document.getElementById('delayMsg').innerHTML = 'Please wait youll be redirected after <span id="countDown">5</span> seconds....';
+            var count = 5;
+            setInterval(function(){
+                count--;
+                document.getElementById('countDown').innerHTML = count;
+                if (count == 0) {
+                    window.location = 'https://www.google.com'; 
+                }
+            },1000);
+        }
+        </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+
+<div class="content">Hola, <br>
+    ¿Como estas? <br>
+    </div>
+    
+<div class="content2" style="display:none;">
+    Mi Nombre es Jorge Felix Gonzalez
+</div>
+
+<div class="content3" style="display:none;">
+    <p class="line-1 anim-typewriter">Todo Comenzo con un Hola Mundo ()!.</p>
+    <div id="delayMsg"></div>
+</div>
+
+<div class="content4" style="display:none;">
+    <input type="button" onclick="delayRedirect()" value="Click to Redirect"/>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    setTimeout(function() {
+        $(".content").fadeOut(1500);
+    },3000);
+ 
+    setTimeout(function() {
+        $(".content2").fadeIn(1500);
+    },4000);
+
+    setTimeout(function() {
+        $(".content3").fadeIn(1500);
+    },7000);
+
+    setTimeout(function() {
+        $(".content4").fadeIn(1500);
+    },12000);
+});
+</script>
+
+</body>
+</html>
